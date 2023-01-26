@@ -1,20 +1,26 @@
 #include <iostream>
 const int Arsize = 8;
 int sum_arr(int arr[], int n);
+int fill_array(double ar[], int limimt);
 
 int main() {
-//배열 매개변수로 사용하는 것의 의미
-/*	int cookies[Arsize] = { 1,2,4,8,16,32,64,128 };
+	//배열 매개변수로 사용하는 것의 의미
+	/*	int cookies[Arsize] = { 1,2,4,8,16,32,64,128 };
 
-	std::cout << cookies << " = 배열 주소, ";
+		std::cout << cookies << " = 배열 주소, ";
 
-	std::cout << "sizeof cookies = " << sizeof cookies << std::endl;
-	int sum = sum_arr(cookies, Arsize);
-	std::cout << "먹은 과자 수 합계: " << sum << std::endl;
-	sum = sum_arr(cookies, 3);
-    std::cout << "처음 세 사람은 과자 " << sum << "개를 먹었습니다.\n";
-	sum = sum_arr(cookies + 4, 4);
-	std::cout << "마지막 네 사람은 과자 " << sum << "개를 먹었습니다.\n"; */
+		std::cout << "sizeof cookies = " << sizeof cookies << std::endl;
+		int sum = sum_arr(cookies, Arsize);
+		std::cout << "먹은 과자 수 합계: " << sum << std::endl;
+		sum = sum_arr(cookies, 3);
+		std::cout << "처음 세 사람은 과자 " << sum << "개를 먹었습니다.\n";
+		sum = sum_arr(cookies + 4, 4);
+		std::cout << "마지막 네 사람은 과자 " << sum << "개를 먹었습니다.\n"; */
+
+	double arr[] = { 1.1,2.2,3.3,4.4,5.5 };
+
+	int result = fill_array(arr, 3);
+	std::cout << arr[0] << " " << arr[1] << " " << arr[2];
 	return 0;
 }
 
@@ -25,4 +31,26 @@ int sum_arr(int arr[], int n) {
 	for (int i = 0; i < n; i++)
 		total += arr[i];
 	return total;
+}
+
+int fill_array(double ar[], int limit) {
+
+	using namespace std;
+	double temp;
+	int i;
+	for (i = 0; i < limit; i++) {
+		cout << (i + 1) << "번 부동산의 가격: ";
+		cin >> temp;
+		if (!cin) {
+			cin.clear();
+			while (cin.get() != '\n')
+				continue;
+			cout << "입력 불량; 입력과정을 끝내겠습니다.\n";
+			break;
+		}
+		else if (temp < 0)
+			break;
+		ar[i] = temp;
+	}
+	return i;
 }
