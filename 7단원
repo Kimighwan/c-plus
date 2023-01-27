@@ -20,7 +20,7 @@ int main() {
 	double arr[] = { 1.1,2.2,3.3,4.4,5.5 };
 
 	int result = fill_array(arr, 3);
-	std::cout << arr[0] << " " << arr[1] << " " << arr[2];
+	std::cout << result;
 	return 0;
 }
 
