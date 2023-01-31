@@ -20,6 +20,7 @@ int main() {
 	std::cout << "피자 회사의 이름 : " << piza->name << std::endl;
 	std::cout << "피자의 지름 : " << piza->diameter << std::endl;
 	std::cout << "피자의 중량 : " << piza->wight <<"g" << std::endl;
+	delete piza;
 	
 	return 0;
 }
