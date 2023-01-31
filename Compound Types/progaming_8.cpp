@@ -2,7 +2,7 @@
 #include <string>
 
 struct Piza {
-	std::string name;//피자 회사의 이름(여러 단어로 될 수 있다)
+	std::string name;//피자 회사의 이름(여러 단어로 될 수 있다.)
 	double diameter;//피자의 지름
 	double wight;//피자의 중량
 };
