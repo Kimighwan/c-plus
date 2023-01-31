@@ -16,7 +16,7 @@ int main() {
 	std::cout << "피자의 지름을 입력하시오 : ";
 	std::cin >> piza.diameter;
 
-	std::cout << "피자의 중략을 입력하시오 : ";
+	std::cout << "피자의 중량을 입력하시오 : ";
 	std::cin >> piza.wight;
 
 	std::cout << "피자 회사의 이름 : " << piza.name << std::endl;
