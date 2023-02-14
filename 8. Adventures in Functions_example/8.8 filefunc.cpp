@@ -25,7 +25,7 @@ int main() {
 		cin >> eps[i];
 	}
 	file_it(fout, objective, eps, LIMIT);
-	file_it(fout, objective, eps, LIMIT);
+	file_it(out, objective, eps, LIMIT);
 	cout << "종료\n";
 	return 0;
 }
