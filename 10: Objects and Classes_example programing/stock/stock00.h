@@ -11,7 +11,7 @@ private:
 public:
 	void acquire(const std::string& co, long n, double pr);
 	void buy(long num, double price);
-	void sell(long num, double pricee);
+	void sell(long num, double price);
 	void update(double price);
 	void show();
 };
