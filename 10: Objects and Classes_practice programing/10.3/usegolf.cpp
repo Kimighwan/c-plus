@@ -1,19 +1,27 @@
 #include <iostream>
 #include "golf.h"
-
+const int ArSize = 5;
 int main() {
-	golf team[3];
-	std::cout << "3명의 golf멤버를 입력하십시오\n";
-	int i;
-	for (i = 0; i < 3; i++)
-		if (setgolf(team[i]) == 0)
-			break;
-	for (i = 0; i < 3; i++)
-		showgolf(team[i]);
-	setgolf(team[0], "Kim Ikhwan", 3);
-	showgolf(team[0]);
-	handicap(team[0], 3);
-	showgolf(team[0]);
+	golf me = golf();
+	me.showgolf();
 
+	golf ann = golf("Ann Birdfree", 24);
+	ann.showgolf();
+
+	golf andy, temp;
+	andy.setgolf(temp);
+	andy.showgolf();
+	andy.updatehandicap();
+	andy.showgolf();
+
+	golf golfers[ArSize];
+	int i, j;
+
+	for (i = 0; i < ArSize && golfers[i].setgolf(temp); i++);
+	for (j = 0; j < i; j++)
+	{
+		std::cout << "golfer #" << j + 1 <<std::endl;
+		golfers[j].showgolf();
+	}
 	return 0;
 }
