@@ -7,10 +7,10 @@ private:
 	int handicap;
 public:
 	golf();
-	golf(const char* name, int hc); 
+	golf(const char* name, int hc);
 	int setgolf(golf& g);
-	void sethandicap(int hc); 
+	void sethandicap(int hc);
 	void updatehandicap();
-	void showgolf() const; 
+	void showgolf() const;
 };
 #endif
