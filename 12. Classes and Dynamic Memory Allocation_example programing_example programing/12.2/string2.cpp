@@ -1,8 +1,8 @@
+#include <iostream>
 #include <cstring>
 #include <cctype>
 #include "string2.h"
-using std::cin;
-using std::cout;
+using namespace std;
 
 int String::num_strings = 0;
 
@@ -11,10 +11,9 @@ int String::HowMany() {
 }
 
 String::String(const char* s) {
-	len = std::strlen(s);
+	len = strlen(s);
 	str = new char[len + 1];
-	strcpy_s(str, len + 1, s);
-	num_strings++;
+	strcpy(str, s);
 }
 
 String::String() {
@@ -28,7 +27,7 @@ String::String(const String& st) {
 	num_strings++;
 	len = st.len;
 	str = new char[len + 1];
-	strcpy_s(str, len + 1, st.str);
+	strcpy(str,st.str);
 }
 
 String::~String() {
@@ -42,7 +41,7 @@ String& String::operator=(const String& st) {
 	delete[] str;
 	len = st.len;
 	str = new char[len + 1];
-	strcpy_s(str, len + 1, st.str);
+	strcpy(str, st.str);
 	return *this;
 }
 
@@ -50,7 +49,7 @@ String& String::operator=(const char* s) {
 	delete[] str;
 	len = std::strlen(s);
 	str = new char[len + 1];
-	strcpy_s(str, len + 1, s);
+	strcpy(str, s);
 	return *this;
 }
 
@@ -67,7 +66,7 @@ bool operator<(const String& st1, const String& st2) {
 }
 
 bool operator>(const String& st1, const String& st2) {
-	return st2 < st1;
+	return(std::strcmp(st1.str, st2.str) > 0);
 }
 
 bool operator==(const String& st1, const String& st2) {
@@ -89,7 +88,7 @@ istream& operator>>(istream& is, String& st) {
 	return is;
 }
 
-String& operator+(const String& st1, const String& st2) {
+String operator+(const String& st1, const String& st2) {
 	int tlen = st1.len + st2.len;
 	char* tstr = new char[tlen + 1];
 	strcpy(tstr, st1.str);
@@ -109,7 +108,7 @@ void String::stringup() {
 		str[i] = toupper(str[i]);
 }
 
-int String::show(char ch) {
+int String::have(char ch) {
 	int count = 0;
 	for (int i = 0; i < len; i++) {
 		if (str[i] == ch)
