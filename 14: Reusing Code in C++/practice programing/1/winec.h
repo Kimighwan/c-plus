@@ -20,5 +20,6 @@ public:
 	void GetBottles(); // 하나의 Wine객체가 y개의 수확 년도로 주어 졌을 때, 사용자가 수확 년도와 와인 수량을 입력하도록 지시한다.
 	const std::string& Label();
 	int sum() const { return list.second().sum(); }
+	void Show() const; // 객체 내용 디스플레이
 };
 #endif
